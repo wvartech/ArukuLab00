@@ -33,7 +33,9 @@ public class LerpTo : IEntityState
 
     public void Exit() {
         lerper = 0;
-        context.setState(new WaitFor(context, 1f));
+        target = transformTarget.position;
+        startPosition = context.transform.position;
+//        context.setState(new WaitFor(context, 1f));
     }
 
 

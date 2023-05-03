@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5fbced91be78f704fbee3990d507372e
+guid: 1409b7cb3e9be5c40be38d34ed766cae
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: skull_0
+      name: proyectile_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 676e9ef7fddc71c4c9f6f26d9b400546
-      internalID: 1162709444
+      spriteID: 0f84610584e39ad40a2480a43cc9bfb4
+      internalID: 486033307
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skull_1
+      name: proyectile_1
       rect:
         serializedVersion: 2
         x: 48
@@ -140,8 +140,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d075a9c8aeb287479ae656b137955b6
-      internalID: 1909307498
+      spriteID: 798eac6119a1c39408a9c3fc1396ca6b
+      internalID: -582064005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: proyectile_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdfc1612763acb847b257fbbfa1436b5
+      internalID: 1254018636
       vertices: []
       indices: 
       edges: []
@@ -149,7 +170,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5c61cb40b94835b42b60d59788283bcb
+    spriteID: 588b886356876eb40b7006338c8a2052
     internalID: 0
     vertices: []
     indices: 
@@ -157,8 +178,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      skull_0: 1162709444
-      skull_1: 1909307498
+      proyectile_1: -582064005
+      proyectile_2: 1254018636
+      proyectile_0: 486033307
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

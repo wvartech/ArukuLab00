@@ -5,18 +5,12 @@ using UnityEngine;
 
 public class GoodSpirit : EntityContext
 {
-
 //    private EntityContext context;
-//    private IEntityState defaultState;
-    private Transform player;
-
-    public GoodSpirit(IEntityState defaultState) : base(defaultState) {
-        this.defaultState = defaultState;
-    }
-
+//    private IEntityState defaultState;    
+    
     private void Start() {
-        player = GameManager.instance.getPlayer();
-        defaultState = new LerpTo(this,player, 1f);
+        target = GameManager.instance.getPlayer();
+        defaultState = new LerpTo(this,target, 1f);
      //   defaultState = new MoveToTarget(this, player);
         currentState = defaultState;
         

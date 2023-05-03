@@ -5,12 +5,10 @@ using UnityEngine;
 public class MoveToTarget : IEntityState
 {
     
-    private Transform target;
     public EntityContext context { get; }
 
-    public MoveToTarget(EntityContext context,Transform target) {
-        this.context = context;
-        this.target = target;
+    public MoveToTarget(EntityContext context) {
+        this.context = context;        
     }    
 
     public void Enter() {
@@ -22,11 +20,12 @@ public class MoveToTarget : IEntityState
     }
 
     public void Update() {
-        if (Vector3.Distance(context.transform.position, target.transform.position) < 0.5f) {
+        
+        if (Vector3.Distance(context.transform.position, context.target.position) < 0.5f) {
             Exit();
-            context.setState(new WaitFor(context,2f));
+            return;
         }
-        context.transform.position += GetDirection(target.position) * Time.deltaTime;
+        context.transform.position += GetDirection(context.target.position) * Time.deltaTime * context.speed;
     }
 
     private Vector3 GetDirection(Vector3 target) {

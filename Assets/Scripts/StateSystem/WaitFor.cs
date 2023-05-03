@@ -20,8 +20,7 @@ public class WaitFor : IEntityState {
 
     public void Update() {
         if (waitTarget > Time.time) { return; } else {
-            Exit();
-         //   context.setState(new MoveToTarget(context,context.target));
+            Exit();         
         }
     }
 }
