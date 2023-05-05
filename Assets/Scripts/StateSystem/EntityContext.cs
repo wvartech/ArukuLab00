@@ -13,18 +13,7 @@ public abstract class EntityContext : MonoBehaviour {
 
     public Transform target {get; protected set; }
     public float speed { get; protected set; }
-
-    void Start()
-    {
-    /*    Debug.Log(name + " started!");
-        target = GameManager.instance.getPlayer();
-        if (defaultState == null) {
-            defaultState = new WaitFor(this, 1f);
-            currentState = new MoveToTarget(this);
-        } */
-    }
-
-    // Update is called once per frame
+       
     public virtual void Update()
     {
         currentState.Update();

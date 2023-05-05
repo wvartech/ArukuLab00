@@ -20,8 +20,9 @@ public class MoveToTarget : IEntityState
     }
 
     public void Update() {
+        if (context.target == null) return;
         
-        if (Vector3.Distance(context.transform.position, context.target.position) < 0.5f) {
+        if (Vector3.Distance(context.transform.position, context.target.position) < 0.4f) {
             Exit();
             return;
         }

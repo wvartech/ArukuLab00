@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerFSM : EntityContext
+public class PlayerFSM : EntityContext , IDamageable
 {    
     private bool running;
-    // Start is called before the first frame update
+    public Team team { get; private set; }    
+    
     void Start()
     {
+        team = Team.Player;
         defaultState = new HandlePlayerMovementInputs(this);
         currentState = defaultState;
     }
@@ -18,6 +20,8 @@ public class PlayerFSM : EntityContext
         base.Update();
     }
 
+    public void isHit(float stunDuration) {
+        setState(new Flinch(this, stunDuration));
+    }
 
-    
 }

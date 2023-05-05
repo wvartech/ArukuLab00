@@ -129,7 +129,7 @@ TextureImporter:
       name: lantern_1
       rect:
         serializedVersion: 2
-        x: 96
+        x: 48
         y: 0
         width: 48
         height: 48
@@ -209,6 +209,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: lantern_5
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41379593c03704d44805ddca0964674d
+      internalID: 109158508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -221,6 +242,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       lantern_1: 2015329221
+      lantern_5: 109158508
       lantern_2: 1030809116
       lantern_3: 1732448510
       lantern_0: 909049051

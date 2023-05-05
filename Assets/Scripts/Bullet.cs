@@ -23,4 +23,19 @@ public class Bullet : MonoBehaviour
     public void setDirection(Vector3 target) {
         direction = (target - transform.position).normalized;
     }
+
+    void OnCollisionEnter2D(Collision2D collision) {
+     
+        IDamageable other = collision.gameObject.GetComponent<IDamageable>();
+        if (other != null) {
+
+            if (other.team == Team.Player) {
+                other.isHit(1f);
+                Debug.Log("Hit player!");                
+                Destroy(gameObject);
+            }
+            
+        }
+    }
+
 }
