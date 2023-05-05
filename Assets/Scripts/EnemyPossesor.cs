@@ -22,6 +22,8 @@ public class EnemyPossesor : EntityContext
         currentState.Update();
         if (Vector3.Distance(transform.position, target.position) < 0.45f) {
          //   Debug.Log("Within range!");
+         target.GetComponent<IPossesable>().Possess();
+         Destroy(gameObject);
         }
 
 

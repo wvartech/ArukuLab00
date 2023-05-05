@@ -30,6 +30,10 @@ public class HandlePlayerMovementInputs : IEntityState
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
         AnimationUpdate(inputX, inputY);
+        if (Input.GetKeyDown(KeyCode.Z)){
+            Debug.Log("Z Presed!");
+            context.setState(new PlayerHoldAttack(context));
+        }
 
         //   Debug.Log(inputX + " " + inputY);
 

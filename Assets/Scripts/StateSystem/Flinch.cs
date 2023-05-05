@@ -15,6 +15,7 @@ public class Flinch : IEntityState
     }
     public void Enter() {
         timer = duration;
+     //   context.playerAnimator.Play("Base Layer.Flinch",0,1);
     }
 
     public void Exit() {
