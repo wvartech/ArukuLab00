@@ -5,9 +5,12 @@ using UnityEngine;
 public class HandlePlayerMovementInputs : IEntityState
 {
     public EntityContext context { get; }
+    private EntityContext helper;
     private bool running = false;
-    public HandlePlayerMovementInputs(EntityContext context) {
+
+    public HandlePlayerMovementInputs(EntityContext context, EntityContext helper) {
         this.context = context;
+        this.helper = helper;
     }
 
     public void Enter() {
@@ -15,12 +18,6 @@ public class HandlePlayerMovementInputs : IEntityState
     }
 
     public void Exit() {
-        
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
         
     }
 
@@ -32,7 +29,7 @@ public class HandlePlayerMovementInputs : IEntityState
         AnimationUpdate(inputX, inputY);
         if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space)){
             //Debug.Log("Z Presed!");
-            context.setState(new PlayerHoldAttack(context));
+            context.setState(new PlayerHoldAttack(context,helper));
         }
 
         //   Debug.Log(inputX + " " + inputY);

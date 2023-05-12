@@ -11,13 +11,16 @@ public class PlayerFSM : EntityContext , IDamageable
     [SerializeField]
     private Image hpBar;
 
+    [SerializeField]
+    private EntityContext helper;
+
     public Team team { get; private set; }    
     
     void Start()
     {
         team = Team.Player;
         currentHealth = maxHealth;
-        defaultState = new HandlePlayerMovementInputs(this);
+        defaultState = new HandlePlayerMovementInputs(this, helper);
         currentState = defaultState;
         hpBar.fillAmount = currentHealth/maxHealth;
     }
@@ -38,6 +41,10 @@ public class PlayerFSM : EntityContext , IDamageable
             GameManager.instance.GameOver("Game Over!");
             //LoadManager.instance.StartGame();
         }
+    }
+
+    public EntityContext getHelper(){
+        return helper;
     }
 
 
