@@ -9,6 +9,7 @@ public abstract class EntityContext : MonoBehaviour {
     
     public Animator playerAnimator;
     public SpriteRenderer playerSprite;
+    //public ParticleSystem attackParticles;
 
 
     public Transform target {get; protected set; }
@@ -23,6 +24,14 @@ public abstract class EntityContext : MonoBehaviour {
         currentState.Exit();
         currentState = state;
         currentState.Enter();
+    }
+
+    public void setFacing(Vector3 facing) {
+        if ((facing.x - transform.position.x ) > 0) {
+            playerSprite.flipX = true;
+        } else {
+            playerSprite.flipX= false;
+        }
     }
 
     public void setDefault() {

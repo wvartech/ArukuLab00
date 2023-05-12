@@ -24,7 +24,7 @@ public class LerpTo : IEntityState
         lerper = 0;
         target = transformTarget.position;
 
-        if (Vector3.Distance(context.transform.position, target) < 0.5f) {
+        if (Vector3.Distance(context.transform.position, target) < 0.7f) {
             target = context.transform.position;
         } 
         startPosition = context.transform.position;
@@ -48,7 +48,7 @@ public class LerpTo : IEntityState
     private void getLerping() {
         lerper += Time.deltaTime;        
         if (lerper > lerpDuration) {
-            Exit();
+            context.setDefault();
             return;
         }
         context.transform.position = Vector3.Lerp(startPosition, target, lerper - 0.15f);

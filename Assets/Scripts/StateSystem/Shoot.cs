@@ -15,11 +15,13 @@ public class Shoot : IEntityState {
         this.shootInterval = shootInterval;
         this.shotAmmount = shotAmmount;
         this.bulletPrefab = bulletPrefab;
+        context.setFacing(context.target.position);
     }
 
     public void Enter() {
         timer = 0;
         shots = shotAmmount;
+        context.setFacing(context.target.position);
     }
 
     public void Exit() {

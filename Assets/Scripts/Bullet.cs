@@ -30,7 +30,7 @@ public class Bullet : MonoBehaviour
         if (other != null) {
 
             if (other.team == Team.Player) {
-                other.isHit(1f);
+                other.isHit(0.35f,transform.position);
                 Debug.Log("Hit player!");                
                 Destroy(gameObject);
             }

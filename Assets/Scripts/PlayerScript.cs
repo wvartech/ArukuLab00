@@ -9,6 +9,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField]
     private SpriteRenderer playerSprite;
     private bool running;
+    
 
     // Update is called once per frame
     void Update()

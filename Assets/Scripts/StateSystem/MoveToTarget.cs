@@ -8,11 +8,12 @@ public class MoveToTarget : IEntityState
     public EntityContext context { get; }
 
     public MoveToTarget(EntityContext context) {
-        this.context = context;        
+        this.context = context;
+        context.setFacing(context.target.transform.position);
     }    
 
     public void Enter() {
-        
+        context.setFacing(context.target.transform.position);
     }
 
     public void Exit() {
@@ -22,8 +23,8 @@ public class MoveToTarget : IEntityState
     public void Update() {
         if (context.target == null) return;
         
-        if (Vector3.Distance(context.transform.position, context.target.position) < 0.4f) {
-            Exit();
+        if (Vector3.Distance(context.transform.position, context.target.position) < 0.3f) {
+            context.setDefault();
             return;
         }
         context.transform.position += GetDirection(context.target.position) * Time.deltaTime * context.speed;

@@ -30,8 +30,8 @@ public class HandlePlayerMovementInputs : IEntityState
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
         AnimationUpdate(inputX, inputY);
-        if (Input.GetKeyDown(KeyCode.Z)){
-            Debug.Log("Z Presed!");
+        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space)){
+            //Debug.Log("Z Presed!");
             context.setState(new PlayerHoldAttack(context));
         }
 
@@ -45,7 +45,12 @@ public class HandlePlayerMovementInputs : IEntityState
             running = true;
         } else running = false;
 
-        context.playerAnimator.SetBool("isRunning", running);
+        //   context.playerAnimator.SetBool("isRunning", running);
+        if (running) {
+            context.playerAnimator.Play("CharaRun");
+        } else {
+            context.playerAnimator.Play("CharaIdle");
+        }
 
         if (inX != 0) {
             context.playerSprite.flipX = inX > 0 ? false : true;

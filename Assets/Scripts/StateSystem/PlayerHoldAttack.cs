@@ -15,6 +15,7 @@ public class PlayerHoldAttack : IEntityState
 
     public void Enter(){
         holdDuration = 0;
+        context.playerAnimator.Play("CharaCharge");
     }
 
     public void Exit(){
@@ -26,9 +27,9 @@ public class PlayerHoldAttack : IEntityState
     public void Update()
     {
         holdDuration+=Time.deltaTime;
-        if (Input.GetKeyUp(KeyCode.Z)){
+        if (Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.Space)) {
             Debug.Log("Released with " + holdDuration + " power!");            
-            context.setState(new PlayerReleaseAttack(context));
+            context.setState(new PlayerReleaseAttack(context,holdDuration));
         }
     }
 }
